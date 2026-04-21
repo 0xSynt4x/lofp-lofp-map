@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LOFP Ultimate Map — Legends of Future Past</title>
+<title>LOFP 终极地图 — 未来past传说</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Cinzel:wght@400;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -90,47 +90,47 @@ button:hover{background:#e5b94d}
 .sr-item:hover{background:rgba(212,169,70,0.08)}
 </style></head><body>
 <div id="sidebar">
-<h1>⚔ Legends of Future Past — Ultimate Map</h1>
+<h1>⚔ 未来past传说 — 终极地图</h1>
 <div class="tab-bar">
-<div class="tab active" onclick="switchTab('detail')" id="tb-detail">🗺 Raum</div>
-<div class="tab" onclick="switchTab('locate')" id="tb-locate">📍 Wo bin ich?</div>
-<div class="tab" onclick="switchTab('nav')" id="tb-nav">🧭 Navigation</div>
-<div class="tab" onclick="switchTab('areas')" id="tb-areas">🏘 Areas</div>
-<div class="tab" onclick="switchTab('guide')" id="tb-guide">📊 Guide</div>
+<div class="tab active" onclick="switchTab('detail')" id="tb-detail">🗺 房间</div>
+<div class="tab" onclick="switchTab('locate')" id="tb-locate">📍 我在哪里？</div>
+<div class="tab" onclick="switchTab('nav')" id="tb-nav">🧭 导航</div>
+<div class="tab" onclick="switchTab('areas')" id="tb-areas">🏘 区域</div>
+<div class="tab" onclick="switchTab('guide')" id="tb-guide">📊 指南</div>
 </div>
-<div id="searchbar"><input id="search" placeholder="Raum suchen (#Nummer oder Name)"></div>
+<div id="searchbar"><input id="search" placeholder="搜索房间 (#编号或名称)"></div>
 <div id="search-results"></div>
 <!-- DETAIL TAB -->
-<div id="tab-detail" class="panel"><div id="detail">Klicke auf einen Raum in der Karte oder suche oben.</div></div>
+<div id="tab-detail" class="panel"><div id="detail">点击地图上的房间或在上方搜索。</div></div>
 <!-- LOCATE TAB -->
 <div id="tab-locate" class="panel hidden">
-<div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:4px">📍 Wo bin ich?</div>
-<div style="font-size:9px;color:var(--dim);margin-bottom:4px">LOOK-Output aus dem Spiel einfügen:</div>
-<textarea id="locate-text" rows="4" placeholder="[Room Name]&#10;Description text...&#10;Obvious exits: north, south."></textarea>
-<button onclick="doLocate()" style="width:100%">🔍 Standort finden</button>
+<div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:4px">📍 我在哪里？</div>
+<div style="font-size:9px;color:var(--dim);margin-bottom:4px">粘贴游戏中的 LOOK 输出：</div>
+<textarea id="locate-text" rows="4" placeholder="[房间名称]&#10;描述文本...&#10;明显出口：北，南。"></textarea>
+<button onclick="doLocate()" style="width:100%">🔍 查找位置</button>
 <div id="locate-result" style="margin-top:6px"></div>
 </div>
 <!-- NAV TAB -->
 <div id="tab-nav" class="panel hidden">
 <div class="nav-header">
 <div class="nav-input">
-<div class="nav-field"><div class="nav-dot from"></div><input id="nav-from" placeholder="Von: #Raum oder Name"></div>
-<div class="nav-field"><div class="nav-dot to"></div><input id="nav-to" placeholder="Nach: #Raum oder Name"></div>
+<div class="nav-field"><div class="nav-dot from"></div><input id="nav-from" placeholder="从：#房间或名称"></div>
+<div class="nav-field"><div class="nav-dot to"></div><input id="nav-to" placeholder="到：#房间或名称"></div>
 </div>
-<button onclick="doNav()" style="align-self:center;padding:10px 14px">Route<br>finden</button>
+<button onclick="doNav()" style="align-self:center;padding:10px 14px">寻找<br>路线</button>
 </div>
 <div id="nav-result"></div>
 <div id="presets">
-<div style="font-size:8px;color:var(--dim);margin-bottom:3px;text-transform:uppercase">Beispiel-Routen:</div>
-<div class="preset-item" onclick="loadPreset(206,42)"><span class="preset-from">Bazaar</span> → <span class="preset-to">Amilor Training</span></div>
-<div class="preset-item" onclick="loadPreset(201,298)"><span class="preset-from">City Gate</span> → <span class="preset-to">Adventurers' Guild</span></div>
-<div class="preset-item" onclick="loadPreset(201,355)"><span class="preset-from">City Gate</span> → <span class="preset-to">Bank of Fayd</span></div>
-<div class="preset-item" onclick="loadPreset(261,42)"><span class="preset-from">Grand Avenue</span> → <span class="preset-to">Amilor Training</span></div>
-<div class="preset-item" onclick="loadPreset(201,493)"><span class="preset-from">City Gate</span> → <span class="preset-to">Arcana Tower</span></div>
-<div class="preset-item" onclick="loadPreset(201,2702)"><span class="preset-from">City Gate</span> → <span class="preset-to">Crimson Band</span></div>
-<div class="preset-item" onclick="loadPreset(201,1191)"><span class="preset-from">City Gate</span> → <span class="preset-to">Temple of Rorin</span></div>
-<div class="preset-item" onclick="loadPreset(201,66)"><span class="preset-from">City Gate</span> → <span class="preset-to">Temple of Shin-jah</span></div>
-<div class="preset-item" onclick="loadPreset(201,350)"><span class="preset-from">City Gate</span> → <span class="preset-to">Tech. Hall</span></div>
+<div style="font-size:8px;color:var(--dim);margin-bottom:3px;text-transform:uppercase">示例路线：</div>
+<div class="preset-item" onclick="loadPreset(206,42)"><span class="preset-from">集市</span> → <span class="preset-to">阿米洛训练</span></div>
+<div class="preset-item" onclick="loadPreset(201,298)"><span class="preset-from">城门</span> → <span class="preset-to">冒险者公会</span></div>
+<div class="preset-item" onclick="loadPreset(201,355)"><span class="preset-from">城门</span> → <span class="preset-to">费德银行</span></div>
+<div class="preset-item" onclick="loadPreset(261,42)"><span class="preset-from">大道</span> → <span class="preset-to">阿米洛训练</span></div>
+<div class="preset-item" onclick="loadPreset(201,493)"><span class="preset-from">城门</span> → <span class="preset-to">奥秘之塔</span></div>
+<div class="preset-item" onclick="loadPreset(201,2702)"><span class="preset-from">城门</span> → <span class="preset-to">深红乐队</span></div>
+<div class="preset-item" onclick="loadPreset(201,1191)"><span class="preset-from">城门</span> → <span class="preset-to">罗林神庙</span></div>
+<div class="preset-item" onclick="loadPreset(201,66)"><span class="preset-from">城门</span> → <span class="preset-to">辛贾神庙</span></div>
+<div class="preset-item" onclick="loadPreset(201,350)"><span class="preset-from">城门</span> → <span class="preset-to">科技大厅</span></div>
 </div>
 </div>
 <!-- AREAS TAB -->
@@ -140,43 +140,43 @@ button:hover{background:#e5b94d}
 </div>
 <!-- GUIDE TAB -->
 <div id="tab-guide" class="panel hidden">
-<div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:6px">⚔ Monster-Guide (Stadt Fayd)</div>
-<div class="mon-row mon-safe">✅ <b>lost mutt</b> — HP 15, ATK 0, flieht. SICHER.</div>
-<div class="mon-row mon-safe">✅ <b>lost kitten</b> — HP 7, ATK 0, flieht. SICHER.</div>
-<div class="mon-row mon-warn">⚠️ <b>commoner</b> — HP 20, ATK 10, flieht. Alignment-Risiko!</div>
-<div class="mon-row mon-warn">⚠️ <b>beggar</b> — HP 20, ATK 10, flieht. Alignment-Risiko!</div>
-<div class="mon-row mon-danger">🚫 <b>lawkeeper</b> — HP 325, ATK 670. SOFORT TOD!</div>
-<div class="mon-row mon-danger">🚫 <b>guard</b> — HP 2200, ATK 775. UNBESIEGBAR!</div>
-<div class="mon-row mon-danger">🚫 <b>thief</b> — HP 60, ATK 50. Greift an bis zum Tod!</div>
+<div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:6px">⚔ 怪物指南 (费德城)</div>
+<div class="mon-row mon-safe">✅ <b>迷路的狗</b> — HP 15, ATK 0, 逃跑. 安全.</div>
+<div class="mon-row mon-safe">✅ <b>迷路的猫</b> — HP 7, ATK 0, 逃跑. 安全.</div>
+<div class="mon-row mon-warn">⚠️ <b>平民</b> — HP 20, ATK 10, 逃跑. 阵营风险!</div>
+<div class="mon-row mon-warn">⚠️ <b>乞丐</b> — HP 20, ATK 10, 逃跑. 阵营风险!</div>
+<div class="mon-row mon-danger">🚫 <b>执法者</b> — HP 325, ATK 670. 立即死亡!</div>
+<div class="mon-row mon-danger">🚫 <b>守卫</b> — HP 2200, ATK 775. 不可战胜!</div>
+<div class="mon-row mon-danger">🚫 <b>盗贼</b> — HP 60, ATK 50. 战斗至死!</div>
 <hr style="border-color:var(--border);margin:8px 0">
-<div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:6px">🧠 Exploit-Referenz</div>
+<div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:6px">🧠 漏洞参考</div>
 <div style="font-size:9px;line-height:1.6">
-<b style="color:var(--cyan)">Psionics</b> — Alle 30 Disziplinen sofort bei Rank 1. Kein Awakening.<br>
-<b style="color:var(--cyan)">Psi-Kampf</b> — PSI KINETIC THRUST → PROJECT &lt;target&gt; (keine Roundtime)<br>
-<b style="color:var(--cyan)">TEND</b> — Kostenlos heilen, kein Cooldown, kein Ressourcenverbrauch<br>
-<b style="color:var(--cyan)">UNLEARN-Dupe</b> — Ab Rang 6 mehr BP zurück als investiert<br>
-<b style="color:var(--cyan)">HP-Leak</b> — Endurance trainieren → HP bleiben nach UNLEARN<br>
-<b style="color:var(--cyan)">Defense-Stack</b> — Wall of Force (+25 DEF) stackt unbegrenzt<br>
-<b style="color:var(--cyan)">FORAGE</b> — Kein Cooldown, endlos spambar<br>
-<b style="color:var(--cyan)">SUB WEALTH</b> — Script-Shops ziehen kein Gold ab<br>
-<b style="color:var(--red)">GUARD-Loop</b> — Gegenseitiges GUARD = Server-Crash (DoS)<br>
-<b style="color:var(--red)">Spells</b> — NICHT nutzbar. KnownSpells wird nie gesetzt.<br>
-<b style="color:var(--red)">Mana/Psi</b> — Regeneriert NIE. Nur Call on Inner Power (Fatigue→Psi).
+<b style="color:var(--cyan)">灵能</b> — 1级立即解锁全部30个学科。无觉醒。<br>
+<b style="color:var(--cyan)">灵能战斗</b> — PSI KINETIC THRUST → PROJECT &lt;目标&gt; (无回合时间)<br>
+<b style="color:var(--cyan)">TEND</b> — 免费治疗，无冷却，无资源消耗<br>
+<b style="color:var(--cyan)">UNLEARN漏洞</b> — 6级起返还BP多于投入<br>
+<b style="color:var(--cyan)">HP泄漏</b> — 训练耐力 → UNLEARN后HP保留<br>
+<b style="color:var(--cyan)">防御叠加</b> — Force之墙 (+25 DEF) 可无限叠加<br>
+<b style="color:var(--cyan)">FORAGE</b> — 无冷却，可无限刷屏<br>
+<b style="color:var(--cyan)">SUB WEALTH</b> — 脚本商店不会扣除金币<br>
+<b style="color:var(--red)">GUARD循环</b> — 互相GUARD = 服务器崩溃 (DoS)<br>
+<b style="color:var(--red)">法术</b> — 不可用。KnownSpells 从不设置。<br>
+<b style="color:var(--red)">Mana/Psi</b> — 从不恢复。只有 Inner Power (Fatigue→Psi)。
 </div>
 <hr style="border-color:var(--border);margin:8px 0">
-<div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:6px">⌨️ Wichtige Befehle</div>
+<div style="font-size:11px;color:var(--gold);font-weight:600;margin-bottom:6px">⌨️ 重要命令</div>
 <div style="font-size:9px;line-height:1.8">
-<b>STATUS</b> — Stats/XP/BP anzeigen<br>
-<b>TRAIN</b> — Skills trainieren (nur in Training-Räumen)<br>
-<b>UNLEARN &lt;skill&gt;</b> — Skill verlernen, BP zurück<br>
-<b>PSI &lt;name&gt;</b> — Psi-Disziplin vorbereiten<br>
-<b>PROJECT &lt;target&gt;</b> — Psi-Angriff auslösen<br>
-<b>TEND</b> — Selbstheilung (Healing-Skill nötig)<br>
-<b>HIDE</b> → <b>BACKSTAB &lt;target&gt;</b> — Sneak-Angriff<br>
-<b>FORAGE</b> — Materialien sammeln (Outdoor)<br>
-<b>LOOK</b> — Raum ansehen<br>
-<b>WHO</b> — Online-Spieler<br>
-<b>REPORT &lt;text&gt;</b> — Bug melden
+<b>STATUS</b> — 显示属性/XP/BP<br>
+<b>TRAIN</b> — 训练技能（仅在训练区域）<br>
+<b>UNLEARN &lt;技能&gt;</b> — 遗忘技能，返还BP<br>
+<b>PSI &lt;名称&gt;</b> — 准备灵能学科<br>
+<b>PROJECT &lt;目标&gt;</b> — 触发灵能攻击<br>
+<b>TEND</b> — 自我治疗（需要治疗技能）<br>
+<b>HIDE</b> → <b>BACKSTAB &lt;目标&gt;</b> — 潜行攻击<br>
+<b>FORAGE</b> — 收集材料（户外）<br>
+<b>LOOK</b> — 查看房间<br>
+<b>WHO</b> — 在线玩家<br>
+<b>REPORT &lt;文本&gt;</b> — 报告Bug
 </div>
 </div>
 </div>
@@ -185,14 +185,14 @@ button:hover{background:#e5b94d}
 <div id="zoom-controls">
 <button class="zoom-btn" onclick="zoomMap(1.3)">+</button>
 <button class="zoom-btn" onclick="zoomMap(0.77)">−</button>
-<button class="zoom-btn" onclick="centerOn(201)" title="City Gate">⌂</button>
+<button class="zoom-btn" onclick="centerOn(201)" title="城门">⌂</button>
 </div>
 <div id="legend">
-<div class="leg-row"><div class="leg-dot" style="background:#22d3ee"></div>Training</div>
-<div class="leg-row"><div class="leg-dot" style="background:#fb923c"></div>Bank</div>
-<div class="leg-row"><div class="leg-dot" style="background:#ef4444"></div>Forge</div>
-<div class="leg-row"><div class="leg-dot" style="background:#4ade80"></div>Shop</div>
-<div class="leg-row"><div class="leg-dot" style="background:#a78bfa"></div>Monster</div>
+<div class="leg-row"><div class="leg-dot" style="background:#22d3ee"></div>训练</div>
+<div class="leg-row"><div class="leg-dot" style="background:#fb923c"></div>银行</div>
+<div class="leg-row"><div class="leg-dot" style="background:#ef4444"></div>锻造</div>
+<div class="leg-row"><div class="leg-dot" style="background:#4ade80"></div>商店</div>
+<div class="leg-row"><div class="leg-dot" style="background:#a78bfa"></div>怪物</div>
 </div>
 <div id="coords"></div>
 </div>
@@ -204,7 +204,7 @@ const AREAS=[{"name":"AUTOUT","count":200,"poi":["monster"],"rooms":[{"num":104,
 
 const CELL=44;
 const DIR_ARROWS={N:'↑',S:'↓',E:'→',W:'←',NE:'↗',NW:'↖',SE:'↘',SW:'↙',U:'⬆',D:'⬇',ABOVE:'⬆',BELOW:'⬇',O:'↩'};
-const DIR_DE={N:'Nord',S:'Süd',E:'Ost',W:'West',NE:'Nordost',NW:'Nordwest',SE:'Südost',SW:'Südwest',U:'Hoch',D:'Runter',ABOVE:'Hoch',BELOW:'Runter',O:'Raus'};
+const DIR_DE={N:'北',S:'南',E:'东',W:'西',NE:'东北',NW:'西北',SE:'东南',SW:'西南',U:'上',D:'下',ABOVE:'上',BELOW:'下',O:'出'};
 const DOFF={N:[0,-1],S:[0,1],E:[1,0],W:[-1,0],NE:[1,-1],NW:[-1,-1],SE:[1,1],SW:[-1,1],U:[0,-1],D:[0,1],ABOVE:[0,-1],BELOW:[0,1],O:[-1,0]};
 const STOP=new Set("the a an to of in is and you are its it at on for with from that this by has have was were be or but not your their can which all into one some there here they will each do if so up out no than then very just about more other over also back been most only well how may own these her his she he we our".split(" "));
 
